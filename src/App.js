@@ -15,6 +15,7 @@ function App() {
     console.log(contacts[randomNumber])
     setContatsToDisplay([contacts[randomNumber], ...contactsToDisplay])
     console.log(contactsToDisplay)
+
   }
   const sortPopularity= ()=> {
     const sortedByPop = [...contactsToDisplay].sort((a ,b)=> a.popularity< b.popularity ?  1 : -1)
@@ -26,12 +27,9 @@ function App() {
   }
 
   const deleteContact=(contactId)=>{
-      const filteredContact = contactsToDisplay.filter(contact => {
-        return contact.id !==contactId
-      })
+      const filteredContact = contactsToDisplay.filter(contact => contact.id !==contactId)
       setContatsToDisplay(filteredContact)
   }
-
 
   return (
   <>
@@ -52,8 +50,8 @@ function App() {
           <td><img className="img-contact" src={contact.pictureUrl} alt=""/></td>
           <td> {contact.name}</td>
           <td> {contact.popularity.toFixed(2)}</td>
-          <td> {contact.wonEmmy ? <p> 🎷</p> : <p> Nope</p>}</td>
-          <td> {contact.wonOscar ? <p> 🎷</p> : <p> Nope</p>}</td>
+          <td> {contact.wonEmmy ? <p> 🎷</p> : <p>Nope </p>}</td>
+          <td> {contact.wonOscar ? <p> 🎷</p> : <p>Nope </p>}</td>
           <td> <button onClick={() =>deleteContact(contact.id)}> Delete</button></td>
       </tr>
 
