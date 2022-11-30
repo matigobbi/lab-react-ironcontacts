@@ -42,8 +42,7 @@
   width: 100%
 }
 .img-contact{
- width: 50px;
- /* view: 3%; */
+  height: 20vh;
 }
 
 table, th, td {
